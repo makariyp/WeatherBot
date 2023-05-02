@@ -1,0 +1,17 @@
+telegram:
+  bot-name: /*bot-name*/
+  bot-token: /*bot-token*/
+weather:
+  api-key: /*weather-api-key*/
+spring:
+  datasource:
+    username: postgres
+    password: secretpassword
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=bot
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect

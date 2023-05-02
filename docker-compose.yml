@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  bot:
+    image: weather-bot/latest
+
+  post:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "bot"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "secretpassword"
+    ports:
+      - 5434:5432
