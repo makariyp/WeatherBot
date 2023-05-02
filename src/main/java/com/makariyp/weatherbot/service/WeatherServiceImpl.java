@@ -2,6 +2,8 @@ package com.makariyp.weatherbot.service;
 
 import com.makariyp.weatherbot.model.OpenWeatherMapAns;
 import com.makariyp.weatherbot.external.WeatherApi;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,6 @@ public class WeatherServiceImpl implements WeatherService{
     public String getActual(String q) {
         OpenWeatherMapAns weather = weatherApi.getWeather(q, APPID);
         float temp = weather.getMain().getFeels_like() - 273.15f;
-        System.out.println(temp);
         return getClothes(temp);
     }
 

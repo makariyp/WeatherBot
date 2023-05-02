@@ -57,9 +57,9 @@ public class TelegramBot extends TelegramLongPollingBot implements BotCommands {
                     .processing(chatId);
         } else if (update.hasCallbackQuery()) { // когда нажата кнопка города
             chatId = update.getCallbackQuery().getMessage().getChatId();
-            command = update.getCallbackQuery().getMessage().getText();
+            command = update.getCallbackQuery().getData().split("\s")[0];
             String id = update.getCallbackQuery().getId();
-            String message = update.getCallbackQuery().getData();
+            String message = update.getCallbackQuery().getData().split("\s")[1];
 
             buttons.getOrDefault(command, buttons.get("default"))
                     .processingButton(id, chatId, message);

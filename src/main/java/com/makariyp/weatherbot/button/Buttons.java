@@ -15,8 +15,8 @@ public class Buttons {
     private static final InlineKeyboardButton SPB = new InlineKeyboardButton("Санкт-Петербург");
 
     public static InlineKeyboardMarkup inlineMarkup() {
-        MOSCOW.setCallbackData("Москва");
-        SPB.setCallbackData("Санкт-Петербург");
+        MOSCOW.setCallbackData("/setcity Москва");
+        SPB.setCallbackData("/setcity Санкт-Петербург");
 
         List<InlineKeyboardButton> rowInline = List.of(MOSCOW, SPB);
         List<List<InlineKeyboardButton>> rowsInLine = List.of(rowInline);
